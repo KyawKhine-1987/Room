@@ -5,7 +5,7 @@ import androidx.room.*
 @Dao
 interface NoteDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addNote(note: Note)
 
     @Query("select * from note nolock order by id desc;")
@@ -16,6 +16,9 @@ interface NoteDao {
 
     @Update
     suspend fun updateNote(note: Note)
+
+    @Query("update note set title = :head, note = :body where id = :mId;")
+    suspend fun modifyNote(head : String, body: String, mId : Int)
 
     @Delete
     suspend fun deleteNote(note: Note)

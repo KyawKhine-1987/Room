@@ -41,7 +41,7 @@ dependencies {
     implementation "com.google.android.material:material:1.0.0"
 
     // Room
-    //def room_version = "2.2.0-rc01" //cannot find implementation for NoteDatabase_impl does not exist
+    //def room_version = "2.2.0-rc01" //gave me a hard time this error cannot find implementation for NoteDatabase_impl does not exist
     def room_version = "2.2.0-alpha02"
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"

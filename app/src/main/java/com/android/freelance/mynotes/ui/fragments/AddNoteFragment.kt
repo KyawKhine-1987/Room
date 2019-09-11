@@ -74,7 +74,8 @@ class AddNoteFragment : BaseFragment() {
                         it.toast("Note Saved.")
                     } else {
                         mNote.id = note!!.id
-                        NoteDatabase(it).noteDao().updateNote(mNote)
+                       /* NoteDatabase(it).noteDao().updateNote(mNote)*/
+                        NoteDatabase(it).noteDao().modifyNote(mNote.title, mNote.note,mNote.id)
                         it.toast("Note Updated.")
                     }
 
